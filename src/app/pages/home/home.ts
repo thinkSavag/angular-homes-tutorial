@@ -1,14 +1,15 @@
-import {ChangeDetectorRef, Component, inject} from '@angular/core';
-import {HousingLocation} from '../housing-location/housing-location';
-import {HousingLocationInfo} from '../housinglocation';
-import {HousingService} from '../housing';
+import { ChangeDetectorRef, Component, inject } from '@angular/core';
+import { HousingLocationComponent } from 'src/app/components/housing-location/housing-location';
+import { HousingLocation } from 'src/app/interfaces/housinglocation';
+import { HousingService } from 'src/app/services/housing';
+
 @Component({
   selector: 'app-home',
-  imports: [HousingLocation],
+  imports: [HousingLocationComponent],
   template: `
     <section>
       <form>
-        <input type="text" placeholder="Filter by city" #filter />
+        <input type="text" placeholder="Filter by city" #filter/>
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
     </section>
@@ -18,17 +19,17 @@ import {HousingService} from '../housing';
       }
     </section>
   `,
-  styleUrls: ['./home.css'],
+  styleUrls: ['./home.css'] ,
 })
 export class Home {
   private readonly changeDetectorRef = inject(ChangeDetectorRef);
-  housingLocationList: HousingLocationInfo[] = [];
+  housingLocationList: HousingLocation[] = [];
   housingService: HousingService = inject(HousingService);
-  filteredLocationList: HousingLocationInfo[] = [];
+  filteredLocationList: HousingLocation[] = [];
   constructor() {
     this.housingService
       .getAllHousingLocations()
-      .then((housingLocationList: HousingLocationInfo[]) => {
+      .then((housingLocationList: HousingLocation[]) => {
         this.housingLocationList = housingLocationList;
         this.filteredLocationList = housingLocationList;
         this.changeDetectorRef.markForCheck();
@@ -39,8 +40,5 @@ export class Home {
       this.filteredLocationList = this.housingLocationList;
       return;
     }
-    this.filteredLocationList = this.housingLocationList.filter((housingLocation) =>
-      housingLocation?.city.toLowerCase().includes(text.toLowerCase()),
-    );
   }
 }

@@ -1,7 +1,9 @@
 import {ChangeDetectorRef, Component, inject} from '@angular/core';
+
 import {ActivatedRoute} from '@angular/router';
-import {HousingService} from '../housing';
-import {HousingLocationInfo} from '../housinglocation';
+import { HousingLocation } from 'src/app/interfaces/housinglocation';
+import { HousingService } from 'src/app/services/housing';
+
 import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
 
 @Component({
@@ -41,13 +43,13 @@ import {FormControl, FormGroup, ReactiveFormsModule} from '@angular/forms';
       </section>
     </article>
   `,
-  styleUrls: ['./details.css'],
+  styleUrls: ['./details.css'] ,
 })
 export class Details {
   private readonly changeDetectorRef = inject(ChangeDetectorRef);
   route: ActivatedRoute = inject(ActivatedRoute);
   housingService = inject(HousingService);
-  housingLocation: HousingLocationInfo | undefined;
+  housingLocation: HousingLocation | undefined;
   applyForm = new FormGroup({
     firstName: new FormControl(''),
     lastName: new FormControl(''),

@@ -1,0 +1,19 @@
+<header class="site-header">
+  <div class="brand">
+    <a [routerLink]="['/']" class="brand-link">
+      <img class="brand-logo" src="/public/logo.svg" alt="logo" aria-hidden="true" />
+    </a>
+  </div>
+
+  <nav class="site-nav">
+    @for (item of navigationItems; track item.path) {
+      <a
+        [routerLink]="[item.path]"
+        routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: item.exact ?? false }"
+      >
+        {{ item.label }}
+      </a>
+    }
+  </nav>
+</header>

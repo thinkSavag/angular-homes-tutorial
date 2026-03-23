@@ -1,21 +1,18 @@
-import {Component} from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+
+import { RouterOutlet } from '@angular/router';
+import { Header } from './components/layout/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterLink, RouterOutlet],
+  imports: [Header, RouterOutlet],
   template: ` 
-    <main>
-      <a [routerLink]="['/']">
-        <header class="brand-name">
-          <img class="brand-logo" src="/public/logo.svg" alt="logo" aria-hidden="true" />
-        </header>
-      </a>
+  <main>
+      <app-header></app-header>
       <section class="content">
         <router-outlet />
       </section>
-    </main>
-  `,
+    </main> `,
   styleUrls: ['./app.css'],
 })
 export class App {

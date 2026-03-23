@@ -1,65 +1,153 @@
-# Angular 21 Homes Tutorial
+# Angular Homes Extended (Agents + Projects + Refactor)
 
-Working implementation of the Angular Homes tutorial using Angular 21.
+This project extends the Angular Homes tutorial into a **modular, scalable application** by introducing new domains, refactoring architecture, and improving UI behavior.
 
-## About
-This project follows the official Angular tutorial to build a homes listing application. I've updated the commands and fixed compatibility issues for Angular 21.
+## 🧠 System Thinking
 
-## Features
-- Property listings
-- Search functionality  
-- Routing between pages
-- Angular 21 compatible
+This project demonstrates how UI patterns can evolve into reusable system logic,
+forming the foundation for multi-agent architecture and identity mapping.
 
-## Run Locally
+---
+
+## 🚀 What This Project Demonstrates
+
+- Feature scaling (Homes → Agents → Projects)
+- Modular architecture (pages / components / services / interfaces)
+- Component composition (header/navigation extraction)
+- Reactive UI (search-as-you-type filtering)
+- Clean separation of concerns
+
+---
+
+## Architecture Overview
+
+```text
+src/app/
+├── pages/
+│   ├── home/
+│   ├── agents/
+│   ├── projects/
+│
+├── components/
+│   ├── housing-location/
+│   ├── agent-list/
+│   ├── project-list/
+│   ├── header/
+│
+├── services/
+│   ├── housing.service.ts
+│   ├── agent.service.ts
+│   ├── project.service.ts
+│
+├── interfaces/
+│   ├── housing-location.ts
+│   ├── agent.ts
+│   ├── project.ts
+```
+
+---
+
+## Key Concepts Applied
+
+### Separation of Concerns
+- Pages orchestrate data
+- Components render UI
+- Services manage data
+- Interfaces define contracts
+
+### Pattern Replication
+The Homes feature was used as a blueprint to build:
+- Agents
+- Projects
+
+### Component Abstraction
+Navigation was extracted into a reusable `HeaderComponent`.
+
+### Reactive Filtering
+Search now updates results live as users type.
+
+---
+
+## 🎯 Features
+
+- 🏠 Housing listings
+- 🧑 Agents directory
+- 📁 Projects listing
+- 🔍 Live search filtering
+- 🧭 Shared navigation component
+
+---
+
+## 🛠️ Tech Stack
+
+- Angular (Standalone Components)
+- TypeScript
+- HTML / CSS
+- Angular Router
+
+---
+
+## ▶️ Running the App
+
 ```bash
 npm install
 ng serve
 ```
 
-Navigate to `http://localhost:4200/`
+Open in browser:
 
-## Known Issues Fixed
-- Updated Angular CLI commands for v21
-- Fixed compatibility issues with latest dependencies
-
-## Learning Journey
-This is part of my public learning journey. Check out:
-- 📹 [YouTube walkthrough]([link](https://youtu.be/UZm4DsxCeog))
-- 🔄 [Refactored version](link to repo 2 when ready)
-
----
-Built by [thinkSavag](https://github.com/thinkSavag)
+```
+http://localhost:4200
 ```
 
-**This makes your repo look professional immediately.**
+---
+
+## 🧪 Future Enhancements
+
+- FastAPI backend integration
+- Database integration (Neo4j / SQL)
+- Multi-agent system UI
+- State management (signals / observables)
 
 ---
 
-## **2. Upload YouTube Video**
+## 👩‍💻 Author
 
-**Title:**
-"Angular 21 Homes Tutorial - Working Version (Official Tutorial Fixed)"
-
-**Description:**
-```
-Following the Angular 21 Homes tutorial - showing the ACTUAL working version.
-
-⚠️ The official Angular tutorial has some outdated commands that don't work with Angular 21. This video shows how to navigate those issues and complete the tutorial successfully.
-
-✅ What you'll see:
-- Complete tutorial walkthrough
-- Real-time problem solving
-- Working commands for Angular 21
-
-📦 GitHub Repository:
-https://github.com/thinkSavag/angular-homes-tutorial
-
-🔗 Links:
-- Angular Documentation: https://angular.dev
-- My GitHub: https://github.com/thinkSavag
+Built by Missa
 
 ---
-No audio - just screen recording of the build process. Good for visual learners who want to see the actual workflow.
 
-#Angular #Angular21 #WebDevelopment #Tutorial
+## 📺 Video Walkthrough
+
+Includes full recorded walkthrough of:
+
+- Refactoring architecture
+- Adding new features
+- Explaining Angular concepts
+
+*(Links coming soon)*
+
+---
+
+## 📘 Tutorial Instructions (Google Drive)
+
+This project is supported by a full set of structured lesson instructions.
+
+👉 https://drive.google.com/drive/folders/1Ena_vGLSS-l7ZoBgIKMz5QDPXz_YlHb9
+
+### What’s Included
+- Step-by-step Angular Homes tutorial breakdown
+- Guided extension instructions (Agents + Projects)
+- Refactoring steps and architectural improvements
+- Notes aligned with each lesson
+
+---
+
+## 🎯 How to Use the Instructions
+
+If you're following this project:
+
+1. Start with the Homes tutorial lessons
+2. Progress through each instruction set in order
+3. Apply the refactors as you go
+4. Compare your implementation with the final structure
