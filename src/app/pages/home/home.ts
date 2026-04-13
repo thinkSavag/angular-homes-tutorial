@@ -8,7 +8,7 @@ import { HousingService } from 'src/app/services/housing';
   imports: [HousingLocationComponent],
   template: `
     <section>
-      <form>
+      <form (submit)="filterResults(filter.value); $event.preventDefault()">
         <input type="text" placeholder="Filter by city" #filter/>
         <button class="primary" type="button" (click)="filterResults(filter.value)">Search</button>
       </form>
@@ -40,5 +40,9 @@ export class Home {
       this.filteredLocationList = this.housingLocationList;
       return;
     }
+    this.filteredLocationList = this.housingLocationList.filter(
+      (location: HousingLocation) =>
+        location.city.toLowerCase().includes(text.toLowerCase())
+    );
   }
 }
