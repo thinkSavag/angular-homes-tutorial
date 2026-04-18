@@ -8,6 +8,10 @@ This project extends the Angular Homes tutorial into a **modular, scalable appli
 
 Building reusable patterns that scale across features and prepare for real-world apps.
 
+## 📌 Purpose
+
+This project demonstrates how to evolve an Angular application from a tutorial-based UI into a scalable, production-ready system — including modular architecture, local data handling, and cloud deployment.
+
 ---
 
 ## 📍 Current State
@@ -44,8 +48,10 @@ src/app/
 
 * ✅ Feature scaling (Part 2)
 * ✅ Local data layer (`locations.json`) (Part 3)
-* 🔜 Firebase deployment (live app)
-* 🔜 Backend + database
+* ✅ Firebase deployment (live app)
+* 🔜 Backend: Local FastAPI
+* 🔜 Backend: Cloud Run + FastAPI
+* 🔜 Cloud SQL Database
 
 ---
 

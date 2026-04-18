@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "newedg-dab9a"
+  },
+  "targets": {
+    "newedg-dab9a": {
+      "hosting": {
+        "default": [
+          "newedg-dab9a"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

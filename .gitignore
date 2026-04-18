@@ -33,3 +33,9 @@ coverage/
 
 # Misc
 *.log
+
+# Firebase
+.firebase
+
+# Angular build output
+dist/
