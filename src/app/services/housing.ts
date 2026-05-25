@@ -5,20 +5,17 @@ import { HousingLocation } from 'src/app/interfaces/housinglocation';
   providedIn: 'root',
 })
 export class HousingService {
-  url = '/assets/locations.json';
+  url = 'http://127.0.0.1:8000/locations';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url);
-    const json = await data.json();
-    return json.locations ?? [];
+    return (await data.json()) ?? [];
   }
 
   async getHousingLocationById(id: number): Promise<HousingLocation | undefined> {
-    const data = await fetch(this.url);
-    const json = await data.json();
-    return json.locations?.find(
-      (location: HousingLocation) => location.id === id
-    );
+    const data = await fetch(`${this.url}/${id}`);
+    const locationJson = await data.json();
+    return locationJson ?? {};
   }
 
   submitApplication(firstName: string, lastName: string, email: string) {
