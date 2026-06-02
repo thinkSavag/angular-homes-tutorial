@@ -50,7 +50,7 @@ src/app/
 * ✅ Local data layer (`locations.json`) (Part 3)
 * ✅ Firebase deployment (live app)
 * ✅ Backend: Local FastAPI
-* 🔜 Backend: Cloud Run + FastAPI
+* ✅ Backend: Cloud Run + FastAPI
 * 🔜 Cloud SQL Database
 
 ---
