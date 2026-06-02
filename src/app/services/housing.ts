@@ -5,7 +5,7 @@ import { HousingLocation } from 'src/app/interfaces/housinglocation';
   providedIn: 'root',
 })
 export class HousingService {
-  url = 'http://127.0.0.1:8000/locations';
+  url = 'https://newedg-api-655790457728.us-central1.run.app/locations';
 
   async getAllHousingLocations(): Promise<HousingLocation[]> {
     const data = await fetch(this.url);
